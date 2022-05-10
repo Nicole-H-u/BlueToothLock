@@ -1,0 +1,151 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "206",
+                        "endColumns": "58",
+                        "endOffsets": "260"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "183",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "317"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "7,8,5,3,4,6",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "247,299,139,59,102,193",
+                        "endColumns": "50,51,52,41,35,52",
+                        "endOffsets": "293,346,187,96,133,241"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "169,220,272,325,367,403",
+                        "endColumns": "50,51,52,41,35,52",
+                        "endOffsets": "215,267,320,362,398,451"
+                    }
+                },
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,55",
+                        "endOffsets": "108,164"
+                    }
+                },
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values\\titlestyle.xml",
+                    "from": {
+                        "startLines": "3,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "118,239",
+                        "endLines": "5,11",
+                        "endColumns": "12,12",
+                        "endOffsets": "231,502"
+                    },
+                    "to": {
+                        "startLines": "20,42",
+                        "startColumns": "4,4",
+                        "startOffsets": "907,1914",
+                        "endLines": "22,46",
+                        "endColumns": "12,12",
+                        "endOffsets": "1018,2173"
+                    }
+                },
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15,32,25,19",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "251,584,1252,957,749",
+                        "endLines": "12,17,39,30,23",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "543,741,1657,1244,949"
+                    },
+                    "to": {
+                        "startLines": "10,17,23,31,37",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "456,747,1023,1426,1713",
+                        "endLines": "16,19,30,36,41",
+                        "endColumns": "12,12,12,12,12",
+                        "endOffsets": "742,902,1421,1708,1909"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "227",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "375"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        }
+    ]
+}
