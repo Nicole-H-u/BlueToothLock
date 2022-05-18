@@ -1,16 +1,6 @@
 package com.FFX.bluedoorlock;
 
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.UUID;
-
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -20,11 +10,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.FFX.bluedoorlock.CommandInput;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class BluetoothService extends Service {
 
@@ -34,7 +29,7 @@ public class BluetoothService extends Service {
     public static final int TASK_GET_REMOTE_STATE = 3; //获得蓝牙运行状态
     public static final int TASK_RECV_MSG = 4;//接收到聊天消息
     public static final int TASK_CANCEL = 5;
-    private final String UUID_STR = "00001101-0000-1000-8000-00805F9B34FB";
+    private static final String UUID_STR = "00001101-0000-1000-8000-00805F9B34FB";
     private int mTaskID;                // 任务ID
     public Object[] mParams;        // 任务参数列表
     private static boolean istaskThread_alive = false;
@@ -201,7 +196,7 @@ public class BluetoothService extends Service {
                 if (!sucess) {
                     android.os.Message returnMsg = mActivityHandler.obtainMessage();
                     returnMsg.what = TASK_SEND_MSG;
-                    returnMsg.obj = "消息发送失败，请连接设备";
+                    returnMsg.obj = "关闭连接中/未连接设备";
                     mActivityHandler.sendMessage(returnMsg);
                 }
             case TASK_CANCEL:

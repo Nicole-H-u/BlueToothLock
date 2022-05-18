@@ -24,12 +24,12 @@
         "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-xxhdpi\\plus.png"
     },
     {
-        "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_mainacti.jpg.flat",
-        "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-hdpi\\mainacti.jpg"
-    },
-    {
         "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bluedoorlock.png.flat",
         "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-hdpi\\bluedoorlock.png"
+    },
+    {
+        "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_mainacti.jpg.flat",
+        "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-hdpi\\mainacti.jpg"
     },
     {
         "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable_button_type.xml.flat",
@@ -72,12 +72,12 @@
         "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-xxhdpi\\unlock.png"
     },
     {
-        "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_lock.png.flat",
-        "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-xxhdpi\\lock.png"
-    },
-    {
         "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
         "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_lock.png.flat",
+        "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\drawable-xxhdpi\\lock.png"
     },
     {
         "merged": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_back3.jpg.flat",

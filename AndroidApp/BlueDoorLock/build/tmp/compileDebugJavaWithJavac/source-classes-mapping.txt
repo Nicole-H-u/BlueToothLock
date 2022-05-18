@@ -1,7 +1,5 @@
 com/FFX/bluedoorlock/Counter.java
  com.FFX.bluedoorlock.Counter
-com/FFX/bluedoorlock/time/LockTimer.java
- com.FFX.bluedoorlock.time.LockTimer
 com/FFX/bluedoorlock/SelectDevice.java
  com.FFX.bluedoorlock.SelectDevice
  com.FFX.bluedoorlock.SelectDevice$1
@@ -20,6 +18,8 @@ com/FFX/bluedoorlock/MainActivity.java
  com.FFX.bluedoorlock.MainActivity
  com.FFX.bluedoorlock.MainActivity$1
  com.FFX.bluedoorlock.MainActivity$2
+ com.FFX.bluedoorlock.MainActivity$3
+ com.FFX.bluedoorlock.MainActivity$4
 com/FFX/bluedoorlock/MoreFucntion.java
  com.FFX.bluedoorlock.MoreFucntion
  com.FFX.bluedoorlock.MoreFucntion$1
