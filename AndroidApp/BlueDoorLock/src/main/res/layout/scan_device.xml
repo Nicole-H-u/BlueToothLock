@@ -8,7 +8,7 @@
     <ListView
         android:id="@+id/listView_dev"
         android:layout_width="match_parent"
-        android:layout_height="382dp"
+        android:layout_height="0dp"
         android:layout_weight="1.14"
         android:divider="#a9a9a9"
         android:listSelector="#696969">
@@ -21,6 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:background="@drawable/button_type"
-        android:text="扫描设备" />
+        android:text="@string/scan" />
 
 </LinearLayout>

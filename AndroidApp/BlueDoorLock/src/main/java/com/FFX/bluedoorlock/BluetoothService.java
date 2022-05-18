@@ -33,6 +33,7 @@ public class BluetoothService extends Service {
     public static final int TASK_SEND_MSG = 2;    //发送消息任务
     public static final int TASK_GET_REMOTE_STATE = 3; //获得蓝牙运行状态
     public static final int TASK_RECV_MSG = 4;//接收到聊天消息
+    public static final int TASK_CANCEL = 5;
     private final String UUID_STR = "00001101-0000-1000-8000-00805F9B34FB";
     private int mTaskID;                // 任务ID
     public Object[] mParams;        // 任务参数列表
@@ -68,7 +69,6 @@ public class BluetoothService extends Service {
             mThread.start();
             istaskThread_alive = true;
         }
-        Log.e(TAG, "BluetoothService: aaa uuid: " + uuid + "UUID_STR" + UUID_STR);
     }
 
     public BluetoothService() {
@@ -107,7 +107,6 @@ public class BluetoothService extends Service {
                     activityMsg.what = msg.what;
                     if (mCommThread != null && mCommThread.isAlive()) {
                         activityMsg.obj = mCommThread.getRemoteName() + "[已连接]";
-
                     } else if (mConnectThread != null && mConnectThread.isAlive()) {
                         activityMsg.obj = "正在连接："
                                 + mConnectThread.getDevice().getName();
@@ -204,6 +203,10 @@ public class BluetoothService extends Service {
                     returnMsg.what = TASK_SEND_MSG;
                     returnMsg.obj = "消息发送失败，请连接设备";
                     mActivityHandler.sendMessage(returnMsg);
+                }
+            case TASK_CANCEL:
+                if (mConnectThread != null) {
+                    mConnectThread.cancel();
                 }
                 break;
         }
@@ -480,9 +483,4 @@ public class BluetoothService extends Service {
         // TODO Auto-generated method stub
         return null;
     }
-
-    public void disConnect() {
-        mConnectThread.cancel();
-    }
-
 }

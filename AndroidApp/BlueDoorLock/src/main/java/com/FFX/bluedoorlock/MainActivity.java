@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -20,15 +19,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.FFX.bluedoorlock.errorprocess.ErrorProcess;
+
 public class MainActivity extends Activity {
 
     private static final int REQUES_SELECT_BT_CODE = 0x1001;    //选择设备码
-    //	private static final int REQUES_BT_ENABLE_CODE = 0x1002;	//使能请求码
-    private BluetoothAdapter mBluetoothAdapter;                            //蓝牙适配器
+    private BluetoothAdapter mBluetoothAdapter;      //蓝牙适配器
     private TextView tv_title;
     private ImageButton imbtn_open;
     private EditText txt_password;
     private static boolean isopen = false;
+    private ErrorProcess errorProcess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
         //初始化控件并设置监听器
         init();
+        errorProcess = new ErrorProcess();
         // 获得蓝牙匹配器
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         // 蓝牙设备不被支持
@@ -46,10 +48,6 @@ public class MainActivity extends Activity {
         }
         // 使能蓝牙设备
         mBluetoothAdapter.enable();
-        //  	if (!mBluetoothAdapter.isEnabled()) {
-        //  			Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-        //   			startActivityForResult(enableBtIntent, REQUES_BT_ENABLE_CODE);
-        //  	}
         while (!mBluetoothAdapter.isEnabled()) {
             try {
                 Thread.currentThread();
@@ -81,7 +79,7 @@ public class MainActivity extends Activity {
         imbtn_open.setOnClickListener(listener);
     }
 
-    private OnClickListener listener = new OnClickListener() {
+    private final OnClickListener listener = new OnClickListener() {
         @SuppressLint("NonConstantResourceId")
         @Override
         public void onClick(View v) {
@@ -97,16 +95,14 @@ public class MainActivity extends Activity {
                     startActivity(new Intent(MainActivity.this, MoreFucntion.class));
                     break;
                 case R.id.button_title:
-                    mBluetoothAdapter.disable();
-                    //不确定是否可行
-                    BluetoothService bluetoothService = new BluetoothService();
-                    bluetoothService.disConnect();
+                    BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_SEND_MSG,
+                            new Object[]{}));
                     break;
                 case R.id.imageButton_open:
                     // 将发送消息任务提交给后台服务
                     String msg;
                     String input = txt_password.getText().toString();
-                    if (input.equals(new String("1234"))) {
+                    if (input.equals("1234")) {
                         if (!isopen) {
                             msg = "*unlock#";
                             isopen = true;
@@ -142,7 +138,8 @@ public class MainActivity extends Activity {
         }
     }
 
-    private Handler mHandler = new Handler() {
+    @SuppressLint("HandlerLeak")
+    private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {

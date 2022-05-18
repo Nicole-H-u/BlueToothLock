@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -12,17 +13,25 @@
         android:paddingTop="5dp"
         android:textColor="#FFFFFFFF"
         android:gravity="center"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_title"
         android:layout_width="wrap_content"
         android:layout_height="45dip"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="10dp"
         android:layout_alignBaseline="@+id/textView_title"
         android:layout_alignBottom="@+id/textView_title"
         android:layout_alignParentRight="true"
         android:background="@drawable/mainbutton_selector"
-        android:text="   断开   "
-        android:textSize="16dp" />
+        android:text="@string/disconnect"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentEnd="true"
+        tools:ignore="RelativeOverlap"
+        android:layout_marginEnd="10dp" />
 
 </RelativeLayout>

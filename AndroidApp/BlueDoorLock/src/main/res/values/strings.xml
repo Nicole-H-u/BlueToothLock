@@ -5,6 +5,19 @@
     <string name="blank"> </string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="disconnect">断开</string>
+    <string name="scan">扫描设备</string>
+    <string name="light">开灯</string>
+    <string name="warning">哔哔</string>
+    <string name="door_state">开启关门提醒</string>
+    <string name="open_warning">开启开门报警</string>
+    <string name="flash_light">闪灯</string>
+    <string name="please_input">请输入指令</string>
+    <string name="send">发送</string>
+    <string name="password">请输入密码开锁</string>
+    <string name="connect">连接设备</string>
+    <string name="input">指令输入</string>
+    <string name="more">更多功能</string>
     <drawable name="clr_normal">#ffffff</drawable>
     <drawable name="clr_pressed">#00ff7f</drawable>
 

@@ -12,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/morefunction_selector"
-        android:text="开灯" />
+        android:text="@string/light"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button_beebee"
@@ -22,7 +23,8 @@
         android:layout_below="@+id/button_lightflash"
         android:layout_marginTop="55dp"
         android:background="@drawable/morefunction_selector"
-        android:text="哔哔" />
+        android:text="@string/warning"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button_remindclose"
@@ -32,7 +34,8 @@
         android:layout_below="@+id/button_beebee"
         android:layout_marginTop="55dp"
         android:background="@drawable/morefunction_selector"
-        android:text="开启关门提醒" />
+        android:text="@string/door_state"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button_savemode"
@@ -41,7 +44,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:background="@drawable/morefunction_selector"
-        android:text="开启开门报警" />
+        android:text="@string/open_warning"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button_lightflash"
@@ -51,6 +55,7 @@
         android:layout_below="@+id/button_lighton"
         android:layout_marginTop="55dp"
         android:background="@drawable/morefunction_selector"
-        android:text="闪灯" />
+        android:text="@string/flash_light"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
