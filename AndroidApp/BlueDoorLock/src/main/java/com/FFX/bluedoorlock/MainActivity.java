@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -36,7 +37,7 @@ public class MainActivity extends Activity {
     private static boolean isopen = false;
     private ErrorProcess errorProcess;
     private Timer timer;
-    private static long count = 30;
+    private static long count = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,14 +105,15 @@ public class MainActivity extends Activity {
                     startActivity(new Intent(MainActivity.this, MoreFucntion.class));
                     break;
                 case R.id.button_title:
-                    BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_SEND_MSG,
+                    BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_CANCEL,
                             new Object[]{}));
                     break;
                 case R.id.imageButton_open:
                     // 将发送消息任务提交给后台服务
                     String msg;
                     String input = txt_password.getText().toString();
-                    if (input == null || input.isEmpty()) {
+                    Log.d("aaa", "onClick: " + input);
+                    if (input != null && !input.isEmpty()) {
                         if (!isopen) {
                             msg = input;
                             isopen = true;
@@ -141,7 +143,7 @@ public class MainActivity extends Activity {
                 return;
             // 提交连接用户选择的设备对象，自己作为客户端
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-                BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_START_CONN_THREAD, new Object[]{mRemoteDevice}, mRemoteDevice.getUuids()[7].toString()));
+                BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_START_CONN_THREAD, new Object[]{mRemoteDevice}));
             }
             BluetoothService.start(this, mHandler);
         }

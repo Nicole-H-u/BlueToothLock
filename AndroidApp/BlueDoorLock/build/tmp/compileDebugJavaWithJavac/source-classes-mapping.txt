@@ -1,5 +1,3 @@
-com/FFX/bluedoorlock/Counter.java
- com.FFX.bluedoorlock.Counter
 com/FFX/bluedoorlock/SelectDevice.java
  com.FFX.bluedoorlock.SelectDevice
  com.FFX.bluedoorlock.SelectDevice$1
@@ -12,8 +10,6 @@ com/FFX/bluedoorlock/CommandInput.java
  com.FFX.bluedoorlock.CommandInput$2
 com/FFX/bluedoorlock/errorprocess/ErrorProcess.java
  com.FFX.bluedoorlock.errorprocess.ErrorProcess
-com/FFX/bluedoorlock/LockPassWord.java
- com.FFX.bluedoorlock.LockPassWord
 com/FFX/bluedoorlock/MainActivity.java
  com.FFX.bluedoorlock.MainActivity
  com.FFX.bluedoorlock.MainActivity$1

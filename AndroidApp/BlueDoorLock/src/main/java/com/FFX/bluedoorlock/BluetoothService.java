@@ -53,21 +53,7 @@ public class BluetoothService extends Service {
         }
     }
 
-    public BluetoothService(Handler handler, int taskID, Object[] params, String uuid ) {
-        mActivityHandler = handler;
-        this.mTaskID = taskID;
-        this.mParams = params;
-//        this.UUID_STR = uuid;
-        if (!istaskThread_alive) {
-            // 启动任务服务线程
-            mThread = new TaskThread();
-            mThread.start();
-            istaskThread_alive = true;
-        }
-    }
-
     public BluetoothService() {
-
         if (!istaskThread_alive) {
             // 启动任务服务线程
             mThread = new TaskThread();
@@ -199,10 +185,13 @@ public class BluetoothService extends Service {
                     returnMsg.obj = "关闭连接中/未连接设备";
                     mActivityHandler.sendMessage(returnMsg);
                 }
+                break;
             case TASK_CANCEL:
-                if (mConnectThread != null) {
-                    mConnectThread.cancel();
+                if (mCommThread != null) {
+                    mCommThread.cancel();
                 }
+                break;
+            default:
                 break;
         }
         synchronized (mTaskList) {
@@ -232,8 +221,6 @@ public class BluetoothService extends Service {
             try {
                 tmp = device.createRfcommSocketToServiceRecord(UUID
                         .fromString(UUID_STR));
-//				Method m = device.getClass().getMethod("createRfcommSocket", new Class[] {int.class});
-//				tmp = (BluetoothSocket) m.invoke(device, 1);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -266,8 +253,9 @@ public class BluetoothService extends Service {
                     e.printStackTrace();
                     try {
                         mSocket.close();
+                        Log.d(TAG, "run: close");
                     } catch (IOException closeException) {
-                        Log.e(TAG, "mSocket.close()  failed;");
+                        Log.e(TAG, "mSocket.close failed;");
                         connectException.printStackTrace();
                     }
                 } catch (NoSuchMethodException e) {
@@ -275,14 +263,6 @@ public class BluetoothService extends Service {
                 }
             }
             manageConnectedSocket(mSocket);
-        }
-
-        public void cancel() {
-            try {
-                mSocket.close();
-            } catch (IOException e) {
-            }
-            mConnectThread = null;
         }
     }
 
@@ -333,7 +313,7 @@ public class BluetoothService extends Service {
             try {
                 mBw.write(msg);
                 mBw.flush();
-                System.out.println("Write:" + msg);
+                Log.d(TAG, "write: " + msg);
             } catch (IOException e) {
                 return false;
             }
@@ -434,6 +414,7 @@ public class BluetoothService extends Service {
                     mActivityHandler.sendMessage(handlerMsg);
                 } catch (IOException e) {
                     try {
+                        e.printStackTrace();
                         mSocket.close();
                     } catch (IOException e1) {
                     }
