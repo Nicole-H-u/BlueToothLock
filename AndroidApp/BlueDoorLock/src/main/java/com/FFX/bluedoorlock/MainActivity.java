@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
     private static boolean isopen = false;
     private ErrorProcess errorProcess;
     private Timer timer;
-    private static long count = 100;
+    private static long count = 30;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
