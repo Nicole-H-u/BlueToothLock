@@ -1,4 +1,4 @@
-#Tue May 10 22:17:14 CST 2022
-base.0=D\:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Fri May 13 16:15:24 CST 2022
+base.0=D\:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

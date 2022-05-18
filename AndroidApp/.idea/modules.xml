@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BlueDoorLock1.iml" filepath="$PROJECT_DIR$/.idea/modules/BlueDoorLock1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BlueDoorLock/BlueDoorLock1.BlueDoorLock.iml" filepath="$PROJECT_DIR$/.idea/modules/BlueDoorLock/BlueDoorLock1.BlueDoorLock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ble/BlueDoorLock1.ble.iml" filepath="$PROJECT_DIR$/.idea/modules/ble/BlueDoorLock1.ble.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidApp.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BlueDoorLock/AndroidApp.BlueDoorLock.iml" filepath="$PROJECT_DIR$/.idea/modules/BlueDoorLock/AndroidApp.BlueDoorLock.iml" />
     </modules>
   </component>
 </project>

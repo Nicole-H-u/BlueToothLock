@@ -8,18 +8,19 @@ com/FFX/bluedoorlock/CommandInput.java
  com.FFX.bluedoorlock.CommandInput
  com.FFX.bluedoorlock.CommandInput$1
  com.FFX.bluedoorlock.CommandInput$2
- com.FFX.bluedoorlock.CommandInput$3
-com/FFX/bluedoorlock/MainActivity.java
- com.FFX.bluedoorlock.MainActivity
- com.FFX.bluedoorlock.MainActivity$1
- com.FFX.bluedoorlock.MainActivity$2
-com/FFX/bluedoorlock/MoreFucntion.java
- com.FFX.bluedoorlock.MoreFucntion
- com.FFX.bluedoorlock.MoreFucntion$1
- com.FFX.bluedoorlock.MoreFucntion$2
+com/FFX/bluedoorlock/LockPassWord.java
+ com.FFX.bluedoorlock.LockPassWord
 com/FFX/bluedoorlock/BluetoothService.java
  com.FFX.bluedoorlock.BluetoothService
  com.FFX.bluedoorlock.BluetoothService$1
  com.FFX.bluedoorlock.BluetoothService$ConnectThread
  com.FFX.bluedoorlock.BluetoothService$ConnectedThread
  com.FFX.bluedoorlock.BluetoothService$TaskThread
+com/FFX/bluedoorlock/MoreFucntion.java
+ com.FFX.bluedoorlock.MoreFucntion
+ com.FFX.bluedoorlock.MoreFucntion$1
+ com.FFX.bluedoorlock.MoreFucntion$2
+com/FFX/bluedoorlock/MainActivity.java
+ com.FFX.bluedoorlock.MainActivity
+ com.FFX.bluedoorlock.MainActivity$1
+ com.FFX.bluedoorlock.MainActivity$2

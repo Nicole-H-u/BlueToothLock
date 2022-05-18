@@ -107,6 +107,7 @@ public class BluetoothService extends Service {
                     activityMsg.what = msg.what;
                     if (mCommThread != null && mCommThread.isAlive()) {
                         activityMsg.obj = mCommThread.getRemoteName() + "[已连接]";
+
                     } else if (mConnectThread != null && mConnectThread.isAlive()) {
                         activityMsg.obj = "正在连接："
                                 + mConnectThread.getDevice().getName();
@@ -478,6 +479,10 @@ public class BluetoothService extends Service {
     public IBinder onBind(Intent arg0) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    public void disConnect() {
+        mConnectThread.cancel();
     }
 
 }

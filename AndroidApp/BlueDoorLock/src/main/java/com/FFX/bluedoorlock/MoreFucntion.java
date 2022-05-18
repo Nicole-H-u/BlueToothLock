@@ -33,15 +33,15 @@ public class MoreFucntion extends Activity {
 
     private void init() {
         //初始化控件
-        bt_lighton = (Button) findViewById(R.id.button_lighton);
-        Button bt_lightflash = (Button) findViewById(R.id.button_lightflash);
-        Button bt_bee = (Button) findViewById(R.id.button_beebee);
-        bt_isclose = (Button) findViewById(R.id.button_remindclose);
-        bt_safemode = (Button) findViewById(R.id.button_savemode);
-        Button btn_title = (Button) findViewById(R.id.button_title);
+        bt_lighton = findViewById(R.id.button_lighton);
+        Button bt_light_flash = findViewById(R.id.button_lightflash);
+        Button bt_bee = findViewById(R.id.button_beebee);
+        bt_isclose = findViewById(R.id.button_remindclose);
+        bt_safemode = findViewById(R.id.button_savemode);
+        Button btn_title = findViewById(R.id.button_title);
         btn_title.setOnClickListener(listener);
         bt_lighton.setOnClickListener(listener);
-        bt_lightflash.setOnClickListener(listener);
+        bt_light_flash.setOnClickListener(listener);
         bt_bee.setOnClickListener(listener);
         bt_isclose.setOnClickListener(listener);
         bt_safemode.setOnClickListener(listener);

@@ -1,6 +1,7 @@
 package com.FFX.bluedoorlock;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,13 +25,9 @@ public class MainActivity extends Activity {
     private static final int REQUES_SELECT_BT_CODE = 0x1001;    //选择设备码
     //	private static final int REQUES_BT_ENABLE_CODE = 0x1002;	//使能请求码
     private BluetoothAdapter mBluetoothAdapter;                            //蓝牙适配器
-    private BluetoothDevice mRemoteDevice;                                    //用户选择连接的蓝牙设备
-    private Button btn_scan;
-    private Button btn_send;
-    private Button btn_more;
-    private Button btn_title;
     private TextView tv_title;
     private ImageButton imbtn_open;
+    private EditText txt_password;
     private static boolean isopen = false;
 
     @Override
@@ -68,12 +66,13 @@ public class MainActivity extends Activity {
 
     private void init() {
         //初始化控件
-        btn_scan = (Button) findViewById(R.id.button_scan);
-        btn_send = (Button) findViewById(R.id.button_send);
-        btn_more = (Button) findViewById(R.id.button_more);
-        btn_title = (Button) findViewById(R.id.button_title);
+        Button btn_scan = (Button) findViewById(R.id.button_scan);
+        Button btn_send = (Button) findViewById(R.id.button_send);
+        Button btn_more = (Button) findViewById(R.id.button_more);
+        Button btn_title = (Button) findViewById(R.id.button_title);
         tv_title = (TextView) findViewById(R.id.textView_title);
         imbtn_open = (ImageButton) findViewById(R.id.imageButton_open);
+        txt_password = findViewById(R.id.editText_password);
         //设置监听器
         btn_scan.setOnClickListener(listener);
         btn_send.setOnClickListener(listener);
@@ -83,6 +82,7 @@ public class MainActivity extends Activity {
     }
 
     private OnClickListener listener = new OnClickListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
@@ -98,22 +98,31 @@ public class MainActivity extends Activity {
                     break;
                 case R.id.button_title:
                     mBluetoothAdapter.disable();
+                    //不确定是否可行
+                    BluetoothService bluetoothService = new BluetoothService();
+                    bluetoothService.disConnect();
                     break;
                 case R.id.imageButton_open:
                     // 将发送消息任务提交给后台服务
                     String msg;
-                    if (!isopen) {
-                        msg = "*unlock#";
-                        isopen = true;
-                        imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.unlock));
-                    } else {
-                        msg = "*lock#";
-                        isopen = false;
-                        imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.lock));
+                    String input = txt_password.getText().toString();
+                    if (input.equals(new String("1234"))) {
+                        if (!isopen) {
+                            msg = "*unlock#";
+                            isopen = true;
+                            imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.unlock));
+                        } else {
+                            msg = "*lock#";
+                            isopen = false;
+                            imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.lock));
+                        }
+                        BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_SEND_MSG,
+                                new Object[]{msg}));
                     }
-                    BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_SEND_MSG,
-                            new Object[]{msg}));
-                    break;
+                    else {
+                        Toast.makeText(MainActivity.this, "Password Wrong/Empty!", Toast.LENGTH_SHORT).show();
+                    }
+                     break;
             }
         }
     };
@@ -121,7 +130,8 @@ public class MainActivity extends Activity {
     // 当startActivityForResult启动的 画面结束的时候，该方法被回调
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUES_SELECT_BT_CODE && resultCode == RESULT_OK) {
-            mRemoteDevice = data.getParcelableExtra("DEVICE");
+            //用户选择连接的蓝牙设备
+            BluetoothDevice mRemoteDevice = data.getParcelableExtra("DEVICE");
             if (mRemoteDevice == null)
                 return;
             // 提交连接用户选择的设备对象，自己作为客户端

@@ -1,17 +1,10 @@
 package com.FFX.bluedoorlock;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -20,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class CommandInput extends Activity {
     private ListView listview;
@@ -110,51 +105,4 @@ public class CommandInput extends Activity {
             }
         }
     };
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.commandinput, menu);
-        return true;
-    }
-
-    //菜单点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            //获取门锁状态
-            case R.id.button_opstate:
-                String msg = "*getstate#";
-                BluetoothService.newTask(new BluetoothService(mHandler,
-                        BluetoothService.TASK_SEND_MSG, new Object[]{msg}));
-                break;
-            //获取关门提醒状态
-            case R.id.button_restate:
-                String msg2 = "*getremind#";
-                BluetoothService.newTask(new BluetoothService(mHandler,
-                        BluetoothService.TASK_SEND_MSG, new Object[]{msg2}));
-                break;
-            //获取开门报警状态
-            case R.id.button_alstate:
-                String msg3 = "*getalarm#";
-                BluetoothService.newTask(new BluetoothService(mHandler,
-                        BluetoothService.TASK_SEND_MSG, new Object[]{msg3}));
-                break;
-            //设置用户名
-            case R.id.change_name:
-                AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-                final EditText devNameEdit = new EditText(this);
-                dlg.setView(devNameEdit);
-                dlg.setTitle("请输入用户名");
-                dlg.setPositiveButton("设置", new OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (devNameEdit.getText().toString().length() != 0)
-                            // 设置蓝牙设备名
-                            mBluetoothAdapter.setName(devNameEdit.getText().toString());
-                    }
-                });
-                dlg.create();
-                dlg.show();
-                break;
-        }
-        return true;
-    }
 }

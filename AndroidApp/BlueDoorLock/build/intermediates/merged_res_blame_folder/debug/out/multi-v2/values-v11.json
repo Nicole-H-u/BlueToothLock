@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "D:\\Learning\\AS\\BlueDoorLock1\\BlueDoorLock\\src\\main\\res\\values-v11\\styles.xml",
+                    "source": "D:\\Learning\\AS\\BlueDoorLock\\AndroidApp\\BlueDoorLock\\src\\main\\res\\values-v11\\styles.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",
