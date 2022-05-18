@@ -102,9 +102,8 @@ public class MoreFucntion extends Activity {
                     }
                     break;
                 case R.id.button_title:
-                    //蓝牙适配器
-                    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-                    mBluetoothAdapter.disable();
+                    //断开连接
+                    BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_CANCEL, new Object[]{}));
                     break;
             }
         }

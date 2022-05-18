@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
                     String msg;
                     String input = txt_password.getText().toString();
                     Log.d("aaa", "onClick: " + input);
-                    if (input != null && !input.isEmpty()) {
+                    if (input != null && !input.isEmpty() && errorProcess.isRetrieable()) {
                         if (!isopen) {
                             msg = input;
                             isopen = true;
@@ -126,8 +126,13 @@ public class MainActivity extends Activity {
                         BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_SEND_MSG,
                                 new Object[]{msg}));
                     }
-                    else {
+                    else if (errorProcess.isRetrieable()) {
                         Toast.makeText(MainActivity.this, "Password Empty!", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "You have tried 5 times," +
+                                " the bluetooth will disconnect!", Toast.LENGTH_SHORT).show();
+                        BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_CANCEL, new Object[]{}));
                     }
                      break;
             }
@@ -162,6 +167,11 @@ public class MainActivity extends Activity {
                         imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.unlock));
                     } else if (msg.obj.toString().equals("off")) {
                         imbtn_open.setImageDrawable(getResources().getDrawable(R.drawable.lock));
+                    } else if (msg.obj.toString().equals("error")) {
+                        // 密码错误
+                        errorProcess.passwordError();
+                    } else if (msg.obj.toString().equals("right")) {
+                        errorProcess.resetError();
                     }
                     break;
                 case BluetoothService.TASK_GET_REMOTE_STATE:

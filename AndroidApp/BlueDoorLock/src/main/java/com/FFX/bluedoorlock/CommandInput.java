@@ -47,9 +47,7 @@ public class CommandInput extends Activity {
         btn_title.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-                mBluetoothAdapter.disable();
+                BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_CANCEL, new Object[]{}));
             }
         });
         chatContent = new ArrayList<String>();
