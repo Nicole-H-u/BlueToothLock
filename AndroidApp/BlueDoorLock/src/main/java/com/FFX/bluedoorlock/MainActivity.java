@@ -112,7 +112,6 @@ public class MainActivity extends Activity {
                     // 将发送消息任务提交给后台服务
                     String msg;
                     String input = txt_password.getText().toString();
-                    Log.d("aaa", "onClick: " + input);
                     if (input != null && !input.isEmpty() && errorProcess.isRetrieable()) {
                         if (!isopen) {
                             msg = input;
@@ -170,6 +169,7 @@ public class MainActivity extends Activity {
                     } else if (msg.obj.toString().equals("error")) {
                         // 密码错误
                         errorProcess.passwordError();
+                        resetTimer(count);
                     } else if (msg.obj.toString().equals("right")) {
                         errorProcess.resetError();
                     }

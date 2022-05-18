@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -103,6 +104,7 @@ public class MoreFucntion extends Activity {
                     break;
                 case R.id.button_title:
                     //断开连接
+                    Log.d("aaa", "onClick: ");
                     BluetoothService.newTask(new BluetoothService(mHandler, BluetoothService.TASK_CANCEL, new Object[]{}));
                     break;
             }
